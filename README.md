@@ -26,38 +26,27 @@ Compatibility
 Limitations / Todo
 -------------
 - Create interface for customisation in the WebUi
-- Use the *twisted" native web server to serve the files, as
+- Use the **twisted** native web server to serve the files, as
 [SimpleHTTPServer](https://docs.python.org/2/library/simplehttpserver.html#module-SimpleHTTPServer)
 is not recommended for production
 - Maybe a GTK plugin, but unlikely to be high priority considering the main usage of the tool
 
 ## Installation
-**Stable Release:** `pip install DelugeWebBrowser`<br>
-**Development Head:** `pip install git+https://github.com/aerospeace/DelugeWebBrowser.git`
+Unfortunately, because of the plugin architecture of deluge it does nto seem possible to just release on pypi.
 
-## Documentation
-Docuemntation is not yet there. Will come on following site when available:
+Instead, download the [egg file](https://github.com/aerospeace/DelugeWebBrowser/releases/download/v0.1/DelugeWebBrowser-0.1.2-py2.7.egg)
+and copy it to ~/.config/deluge/plugins/
+
+Alternatively, you can build the egg file from source.
+
+After that:
+1. Restart deluged and deluge-web
+2. Enable the plugin with deluge-console plugin --enable `deluge-console  plugin  --enable DelugeWebBrowser`
+
+
+## Documentation and testing
+Documentation and testing is not yet there. Will come on following site when available:
 [aerospeace.github.io/DelugeWebBrowser](https://aerospeace.github.io/DelugeWebBrowser).
 
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
-
-## The Four Commands You Need To Know
-1. `pip install -e .[dev]`
-
-    This will install your package in editable mode with all the required development dependencies (i.e. `tox`).
-
-2. `make build`
-
-    This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 as well as linting your code.
-
-    At the moment there is not test integrated
-
-3. `make clean`
-
-    This will clean up various Python and build generated files so that you can ensure that you are working in a clean
-    environment.
-
-4. `make docs`
-
-    This will generate and launch a web browser to view the most up-to-date documentation for your Python package.
