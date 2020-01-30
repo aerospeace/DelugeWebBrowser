@@ -3,7 +3,7 @@ __author__ = "Hicham Tahiri"
 __email__ = "aerospeace+dev@gmail.com"
 # Do not edit this string manually, always use bumpversion
 # Details in CONTRIBUTING.md
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 class CorePlugin(PluginInitBase):
   def __init__(self, plugin_name):
